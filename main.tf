@@ -10,7 +10,7 @@ provider "aws" {
 
 module "nomad_cluster" {
   source          = "app.terraform.io/Darnold-Hashicorp/nomad-cluster/aws"
-  version         = "1.0.3"
+  version         = "1.0.4"
   key_name        = "${var.key_name}"
   servers         = "${var.servers}"
   clients         = "${var.clients}"
