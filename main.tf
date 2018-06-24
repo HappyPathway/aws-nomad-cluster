@@ -19,8 +19,8 @@ module "nomad_cluster" {
   region          = "${data.terraform_remote_state.network.region}"
   subnet          = "${data.terraform_remote_state.network.public_subnet}"
   vpc_id          = "${data.terraform_remote_state.network.vpc_id}"
-  consul_cluster  = "${data.aws_instance.consul_instance.private_ip}"
-  vault_cluster   = "${data.aws_instance.vault_cluster.address}"
+  consul_cluster  = "${data.terraform_remote_state.consul_instance.private_ip}"
+  vault_cluster   = "${data.terraform_remote_state.vault_cluster.address}"
   service_name    = "nomad"
   service_version = "1.0.0"
 }
