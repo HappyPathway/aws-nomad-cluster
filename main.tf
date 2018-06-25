@@ -23,4 +23,5 @@ module "nomad_cluster" {
   vault_cluster   = "${data.terraform_remote_state.vault_cluster.vault_address}"
   service_name    = "nomad"
   service_version = "1.0.0"
+  env             = "${var.env}"
 }

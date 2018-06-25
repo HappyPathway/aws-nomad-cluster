@@ -17,3 +17,5 @@ variable "servers" {
 variable "clients" {
   default = 3
 }
+
+variable "env" {}
