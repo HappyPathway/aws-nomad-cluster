@@ -1,5 +1,6 @@
 //--------------------------------------------------------------------
 // Variables
+variable "vault_address" {}
 
 provider "aws" {
   region = "${data.terraform_remote_state.network.region}"
@@ -21,6 +22,6 @@ module "nomad_cluster" {
   vpc_id            = "${data.terraform_remote_state.network.vpc_id}"
   consul_cluster    = "${data.terraform_remote_state.consul_cluster.cluster}"
   consul_cluster_sg = "${data.terraform_remote_state.consul_cluster.cluster_sg}"
-  vault_cluster     = "${data.terraform_remote_state.vault_cluster.vault_address}"
+  vault_cluster     = "${var.vault_address}"
   env               = "${var.env}"
 }
