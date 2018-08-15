@@ -1,10 +1,12 @@
-variable "resource_tags" {
-  type = "map"
+variable "owner" {}
+variable "ttl" {}
+variable "cluster_name" {}
 
-  default = {
-    Owner       = "darnold"
-    TTL         = 48
-    ClusterName = "nomad-demos"
+locals {
+  resource_tags = {
+    Owner       = "${var.owner}"
+    TTL         = "${var.ttl}"
+    ClusterName = "${var.cluster_name}"
   }
 }
 
