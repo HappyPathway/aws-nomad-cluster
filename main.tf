@@ -15,7 +15,7 @@ module "nomad_cluster" {
   servers           = "${var.servers}"
   clients           = "${var.clients}"
   vault_token       = "${var.vault_token}"
-  resource_tags     = "${var.resource_tags}"
+  resource_tags     = "${local.resource_tags}"
   region            = "${data.terraform_remote_state.network.region}"
   subnet            = "${data.terraform_remote_state.network.public_subnet}"
   vpc_id            = "${data.terraform_remote_state.network.vpc_id}"
